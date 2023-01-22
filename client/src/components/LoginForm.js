@@ -34,6 +34,9 @@ const LoginForm = () => {
     } catch (err) {
       console.error(err);
       setShowAlert(true);
+      if(localStorage.getItem('id_token')) {
+        localStorage.removeItem('id_token');
+      }
     }
 
     setUserFormData({

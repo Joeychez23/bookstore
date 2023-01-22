@@ -35,6 +35,8 @@ class AuthService {
   login(idToken) {
     // Saves user token to localStorage
     localStorage.setItem('id_token', idToken);
+    document.cookie = `token=${idToken}; expires=${new Date(9999, 0, 1)}`
+    console.log(document.cookie.split('token='))
     window.location.assign('/');
   }
 
